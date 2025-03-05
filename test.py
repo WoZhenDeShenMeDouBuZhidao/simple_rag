@@ -22,7 +22,7 @@ device = torch.device(device_name)
 # tokenizter
 tokenizer = AutoTokenizer.from_pretrained(
     "shenzhi-wang/Llama3-8B-Chinese-Chat", 
-    token="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"
+    token=""
 )
 tokenizer.pad_token = tokenizer.eos_token
 # quantized model
@@ -35,7 +35,7 @@ quantized_model = AutoModelForCausalLM.from_pretrained(
     "shenzhi-wang/Llama3-8B-Chinese-Chat", 
     quantization_config=quantization_config,
     low_cpu_mem_usage=True,
-    token="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"
+    token=""
 )
 
 def generate_response(_model: AutoModelForCausalLM, inputs: dict) -> str:
